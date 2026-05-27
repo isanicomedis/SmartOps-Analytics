@@ -1,89 +1,43 @@
--- =========================================
--- SMARTOPS ANALYTICS
--- consultas.sql
--- Consultas para análise dos dados
--- =========================================
-
-
--- -----------------------------------------
--- VISUALIZAR TODOS OS DADOS
--- -----------------------------------------
-
+-- vizualizar todos os dados
 SELECT *
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
--- QUANTIDADE TOTAL DE MÁQUINAS
--- -----------------------------------------
-
+-- quantidade total de maquinas
 SELECT COUNT(*) AS total_maquinas
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
--- QUANTIDADE DE FALHAS
--- -----------------------------------------
-
+-- quantidade de falhas
 SELECT COUNT(*) AS total_falhas
 FROM manutencao_industrial
 WHERE machine_failure = 1;
 
-
--- -----------------------------------------
--- MÉDIA DE TORQUE
--- -----------------------------------------
-
+-- media de torque
 SELECT AVG(torque) AS media_torque
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
--- MÉDIA DA TEMPERATURA DO PROCESSO
--- -----------------------------------------
-
+-- media da temperatura do processo
 SELECT AVG(process_temperature) AS media_temperatura
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
--- MAIOR VELOCIDADE ROTACIONAL
--- -----------------------------------------
-
+-- maior velocidade rotacional
 SELECT MAX(rotational_speed) AS maior_velocidade
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
--- MENOR VELOCIDADE ROTACIONAL
--- -----------------------------------------
-
+-- menor velocidade rotacional
 SELECT MIN(rotational_speed) AS menor_velocidade
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
--- TIPOS DE MÁQUINAS EXISTENTES
--- -----------------------------------------
-
+-- tipos de maquinas existentes 
 SELECT DISTINCT machine_type
 FROM manutencao_industrial;
 
-
--- -----------------------------------------
 -- QUANTIDADE DE MÁQUINAS POR TIPO
--- -----------------------------------------
-
 SELECT machine_type,
        COUNT(*) AS quantidade
 FROM manutencao_industrial
 GROUP BY machine_type;
 
-
--- -----------------------------------------
 -- MÁQUINAS COM FALHA
--- -----------------------------------------
-
 SELECT *
 FROM manutencao_industrial
 WHERE machine_failure = 1;

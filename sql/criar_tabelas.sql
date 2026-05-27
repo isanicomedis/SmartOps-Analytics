@@ -1,13 +1,4 @@
--- =========================================
--- SMARTOPS ANALYTICS
--- criar_tabela.sql
--- Criação da tabela de manutenção industrial
--- =========================================
-
-
--- -----------------------------------------
 -- CRIANDO A TABELA
--- -----------------------------------------
 
 CREATE TABLE manutencao_industrial ( --criar uma tabela no banco de dados
 
