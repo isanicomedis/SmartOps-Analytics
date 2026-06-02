@@ -1,3 +1,4 @@
+
 -- vizualizar todos os dados
 SELECT *
 FROM manutencao_industrial;
